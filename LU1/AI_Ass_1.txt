@@ -1,0 +1,44 @@
+Playing chess and Go:
+
+Chess and Go are complex games that require logical thinking and foresight. In 2020, the MuZero[1] algorithm achieved superhuman performance by combining convolutional and residual techniques without needing knowledge of environment dynamics. While this marks significant progress, the introduction of adversarial policies[2] in 2022, which exploit opponents' blind spots, highlights ongoing challenges, as these methods achieve win rates between 97.3% and 99.9%. However, they struggle against search-based agents, leading to lower win rates and increased computational demands.
+
+[1] Schrittwieser, J., Antonoglou, I., Hubert, T., Simonyan, K., Sifre, L., Schmitt, S., Guez, A., Lockhart, E., Hassabis, D., Graepel, T., Lillicrap, T., & Silver, D. (2019). Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model. arXiv. https://doi.org/10.1038/s41586-020-03051-4
+[2] Wang, Tony Tong, Adam Gleave, Nora Belrose, Tom Tseng, Joseph Miller, Michael D. Dennis, Yawen Duan, Viktor Pogrebniak, Sergey Levine, and Stuart Russell. “Adversarial Policies Beat Professional-Level Go AIs.” arXiv preprint arXiv:2211.00241 (2022).
+
+
+The real - time natural language processing:
+
+The real-time NLP API allows users to perform text analytics on documents without adding them to the index, enabling immediate analysis results. It employs statistical models, machine learning, and linguistic rules for tasks like sentiment analysis and chatbot development. [3] ChatGPT uses Reinforcement Learning from Human Feedback (RLHF) but can sometimes produce incorrect or nonsensical answers. This is due to the lack of a definitive source of truth during training and issues with cautious responses. The model is sensitive to input phrasing and often provides overly verbose responses due to training biases. While it aims to refuse inappropriate requests, it can still respond to harmful instructions. User feedback is essential for ongoing improvements to the system.
+
+[3] GPT-4. (2023, March 14). OpenAI. Retrieved May 26, 2023, from https://openai.com/research/gpt-4, https://openai.com/index/chatgpt/
+
+
+Self Driving car 
+Autonomous vehicle means vehicle that can drive itself on existing roads and can navigate many types of roadways and environments contests with almost no direct human input[4]. Significant advancements have been made in autonomous driving, particularly in environmental preception, decision making using convolutional neural network, Motion control, Social perspective making the car to adapt to dynamic environment. Despite progress, this field is ensuring safety and reliability in unpredictable real-world scenarios, including adverse weather conditions and complex interactions with pedestrians and other vehicles.
+
+[4]Kumar, A., & Singh, R. (2018). State of the art and trends of autonomous driving technology. ResearchGate. https://doi.org/10.13140/RG.2.2.12202.30401
+
+
+
+
+
+Face Recognition 
+
+
+Face detection is the crucial part of face recognition determining the number of faces on the picture or video without remembering or storing details.Face recognition identifies a face in a photo or a video image against a pre-existing database of faces. Faces indeed need to be enrolled into the system to create the database of unique facial features. Afterward, the system breaks down a new image into key features and compares them against the information stored in the database. One of the leading methods is FaceNet[5], which uses embedding into
+an Euclidean space for face verification. These embeddings enable the system to efficiently compare and identify faces against a database and has achieved the accuracy of 99.65%. However, the system requires reducing model size, CPU requirements and long training model
+
+[5]He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) (pp. 770-778). https://doi.org/10.1109/CVPR.2016.90
+
+
+Composing Music
+Composing music using artificial intelligence involves creating original pieces of music through algorithms and machine learning techniques. Recent advancements [6] in deep learning, particularly with recurrent neural networks (RNNs) and transformer models, have enabled AI systems to generate music that mimics various styles and genres. These models can learn from vast datasets of musical compositions, allowing them to capture the nuances of melody, harmony, and rhythm. The problem is mostly solved, with AI systems capable of generating coherent and stylistically diverse music compositions that can appeal to listeners. OpenAI's MuseNet, a deep neural network trained on a variety of musical styles, exemplifies state-of-the-art music composition capabilities, generating pieces with intricate musical structures. Despite progress, challenges remain in creating emotionally resonant compositions that connect with listeners on a deeper level, as current models often lack a true understanding of emotional context and human creativity.
+
+[6]M. Agwan, M. Nemade, S. Roy and U. Sinha, "The Fusion of AI and Music Generation: A Comprehensive Review," 2023 6th International Conference on Advances in Science and Technology (ICAST), Mumbai, India, 2023, pp. 90-94, doi: 10.1109/ICAST59062.2023.10454942. keywords: {Deep learning;Reviews;Music;Production;Reinforcement learning;Artificial intelligence;Creativity;Artificial Intelligence;Music Generation;Deep Learning;Neural Networks;GANs;Remixing;Composition;Music Production},
+
+
+
+Robot grasping
+
+Robot grasping[7] involves determining how to physically manipulate objects to achieve specific tasks, requiring an understanding of their geometry and spatial relationships. Current deep learning techniques can predict grasp configurations based on object geometry, often utilizing depth information to inform decisions. The proposed approach effectively integrates depth and RGB data to generate pixel-wise grasp configurations, demonstrating enhanced performance in diverse scenarios. This problem is partially solved, with existing methods providing reasonable grasp predictions but often struggling in cluttered or dynamic environments. A significant challenge remains in refining grasp predictions in complex, unstructured environments, where object occlusion and interaction dynamics can hinder effectiveness.
+[7] Kasaei, H., Kasaei, M., Tziafas, G. et al. Simultaneous Multi-View Object Recognition and Grasping in Open-Ended Domains. J Intell Robot Syst 110, 62 (2024). https://doi.org/10.1007/s10846-024-02092-5
