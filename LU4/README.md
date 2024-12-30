@@ -1,56 +1,92 @@
-# Hill Climbing for the 8-Queens Problem
+# A* Algorithm with Different Heuristics
 
-This assignment involves solving the classic **8-Queens** puzzle by implementing the **hill climbing** algorithm. The goal is to place eight queens on a chessboard so that no two queens can attack each other. A valid solution requires exactly one queen per column, which simplifies the representation of states.
+In this assignment, you will explore **A*** search in a grid world while experimenting with **different heuristic functions**. The goal is to observe how the choice of heuristic affects both the path found and the way nodes are expanded during the search.
 
 ---
 
 ## Overview
 
-1. **State Representation**  
-   A state \( s \) is represented as a list \([p_1, p_2, \ldots, p_8]\), where \( p_i \in \{1, \ldots, 8\} \) denotes the **row** of the queen in column \( i \).
+1. **Setup**  
+   - Use the provided [online implementation of A*](https://www.redblobgames.com/pathfinding/a-star/introduction.html) (or a similar interface) to configure:
+     - **Start** and **Goal** positions
+     - **Obstacles** (walls) within the grid
+   - Run the A* algorithm with different heuristic options (Manhattan distance, Euclidean distance, Diagonal distance, etc.).
 
-2. **Actions**  
-   An action changes the position of one queen within its column (i.e., changing \( p_i \) to a different row value).
+2. **Observation**  
+   - Watch how the blue cells (expanded nodes) and green cells (frontier) evolve during the search.  
+   - Notice that in **Manhattan distance** vs. **Euclidean distance**, the shape of the expanded region differs significantly.
 
-3. **Value Function**  
-   The value function \( v(s) \) is defined as the **number of conflicts** in state \( s \):
+---
+
+## Heuristics in A*
+
+1. **Manhattan Distance** (\(d_{Manhattan}\))  
    \[
-   v(s) = \sum_{i=1}^{8} v(p_i),
+   d_{\text{Manhattan}}(x_1, y_1, x_2, y_2) = |x_1 - x_2| + |y_1 - y_2|
    \]
-   where \( v(p_i) \) is the number of **attacking queens** sharing the same row or the same diagonals as the queen in column \( i \).  
-   - Lower \( v(s) \) means fewer conflicts, so **the objective is to minimize \( v(s) \)**.
+   - **Advantages**:
+     - **Admissible** when only four-directional movement (up, down, left, right) is allowed.
+     - Easy to calculate and often leads to fewer expanded nodes in typical grid settings without diagonal moves.
+   - **Disadvantages**:
+     - **Not perfectly accurate** when diagonal movements are allowed, because diagonal shortcuts are underestimated.
+     - May result in expansions that look “square” and can lead to longer search times if diagonal routes are actually available.
+
+2. **Euclidean Distance** (\(d_{Euclidean}\))  
+   \[
+   d_{\text{Euclidean}}(x_1, y_1, x_2, y_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
+   \]
+   - **Advantages**:
+     - More realistic if diagonal and straight-line movements are possible, giving a more direct estimate of actual distance “as the crow flies.”
+     - **Admissible** for diagonal or any-direction movement in a continuous or 8-connected grid world.
+   - **Disadvantages**:
+     - Can **overestimate** distance if you only allow non-diagonal movement (thus breaking admissibility).
+     - Computing square roots at each step is slightly more computationally expensive (though this is usually negligible).
+
+3. **Diagonal Distance** (sometimes called Chebyshev Distance)  
+   \[
+   d_{\text{Diagonal}}(x_1, y_1, x_2, y_2) = \max(|x_1 - x_2|, |y_1 - y_2|)
+   \]
+   - **Advantages**:
+     - **Admissible** in an 8-connected grid, as it precisely matches the fewest diagonal and straight moves needed.
+     - Simple to compute, just a max of absolute differences.
+   - **Disadvantages**:
+     - Not suitable for 4-direction grids where diagonal movement is disallowed (would not be admissible in that context).
 
 ---
 
-## Tasks
+## Experiment Instructions
 
-1. **Conflict-Detection Functions**  
-   - **`get_conflicts(problem, queen)`**: Calculate how many queens conflict with the given `queen`.  
-   - **`get_all_conflicts(problem)`**: Returns the total number of conflicts in the current state.  
-   - **`get_conflict_vector(problem, queen)`**: Returns the row conflict counts for each possible new row position of `queen`.
+1. **Set up the Grid**  
+   - Place the **Start** and **Goal** in corners or arbitrary positions.
+   - Add **Walls** to create obstacles and more interesting paths.
+   - Enable diagonal movement in the interface if you wish to compare it with 4-directional movement.
 
-2. **Basic Hill Climbing**  
-   - Implement a **hill climbing** algorithm that moves one queen at a time to a position in the same column that reduces the overall number of conflicts.
-   - Test this solution using the provided test cases. It should solve simpler initial states but may get stuck in local minima.
+2. **Run A\***  
+   - Select **Manhattan Distance** as your heuristic. Observe the expanded region (blue) and the frontier (green) cells.
+   - Repeat using **Euclidean Distance**. Compare the shape and number of expanded cells.
+   - Optionally test the **Diagonal Distance** (if the interface supports it).
 
-3. **Recovery Strategy**  
-   - When the algorithm detects a **local minimum** (i.e., no better neighbor state is found), **re-initialize** the board (choose a random initial state) and run hill climbing again.  
-   - Repeat until a valid solution is found.
-
----
-
-## How to Use
-
-1. **Download** `unit4_tasks.zip`, which contains:
-   - **Code framework** with function stubs.
-   - **Test cases** to verify your implementation.
-2. **Implement** the functions in **Python**:
-   - `get_conflicts(problem, queen)`
-   - `get_all_conflicts(problem)`
-   - `get_conflict_vector(problem, queen)`
-3. **Run** the basic hill climbing algorithm on the test cases.  
-   - Verify that it solves the simpler test states.
-4. **Add** the recovery strategy (random restarts) if the solver gets stuck in a local minimum.  
-   - Confirm that, with multiple restarts, you can find a valid 8-Queens solution in most cases.
+3. **Record Observations**  
+   - Take note of how many nodes get expanded.
+   - Observe the final path and its length.
+   - Compare the results for each heuristic, focusing on:
+     - Path optimality (is the path as short as possible?).
+     - Search efficiency (how quickly or broadly the search space was expanded).
 
 ---
+
+## Analysis
+
+Below are key points to consider in your final write-up or discussion:
+
+1. **Effect on Search Efficiency**  
+   - Which heuristic led to fewer expansions and faster completion?
+   - Did a certain heuristic cause A* to explore a more “circular” area around the start (Euclidean) versus a more “square” area (Manhattan)?
+
+2. **Accuracy and Admissibility**  
+   - Was the heuristic still **admissible** given the movement rules?
+   - Did you notice any path that deviated from the truly optimal path because the heuristic was non-admissible?
+
+3. **Trade-offs**  
+   - **Manhattan** vs. **Euclidean**: When is one clearly superior?
+   - How does **Diagonal Distance** compare if diagonal movement is allowed?
