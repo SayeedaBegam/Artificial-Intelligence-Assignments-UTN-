@@ -1,1 +1,20 @@
 
+# State of the Art in Selected AI Problems
+
+## 1. Playing Chess and Go
+Modern solutions employ **deep reinforcement learning** combined with **self-play** and **Monte Carlo Tree Search** (MCTS) to achieve superhuman performance (e.g., AlphaZero). These systems rely on **convolutional neural networks** to evaluate board positions and guide move selection. As a result, they have surpassed the strongest human grandmasters in both chess and Go. However, these methods are game-specific and do not trivially generalize to completely different problem domains. Challenges remain in transferring these techniques to other complex, partially observable, or real-time tasks.
+
+## 2. Real-time Natural Language Processing
+State-of-the-art NLP often leverages **transformer-based** models (e.g., **BERT**, **GPT**, **T5**) that use self-attention to capture long-range dependencies in text. These models excel in real-time tasks like **language translation**, **text classification**, and **conversation systems**, producing coherent and context-aware responses. Nonetheless, they can generate factual errors and exhibit **bias** when trained on uncurated text. Scalability and **energy efficiency** are ongoing concerns, and future research focuses on maintaining high performance while reducing computational costs.
+
+## 3. Self-driving Cars
+Leading autonomous vehicle technologies integrate **deep neural networks** for perception, **sensor fusion** (LiDAR, radar, camera), and **reinforcement learning** or rule-based controllers for decision-making. Notable players such as Waymo and Tesla’s FSD Beta demonstrate impressive capabilities in controlled conditions and select urban regions. However, full **Level 5** autonomy—where vehicles require no human intervention—remains out of reach, primarily due to unforeseen edge cases in complex traffic scenarios, adverse weather, and human unpredictability. Regulatory, ethical, and insurance frameworks also lag behind, posing additional barriers to large-scale deployment.
+
+## 4. Face Recognition
+Modern face recognition systems leverage **deep convolutional neural networks** (e.g., ArcFace, FaceNet) trained on massive datasets for high-accuracy matching and identification. They can outperform humans in controlled environments with uniform lighting and clear facial views. However, factors like pose variation, lighting conditions, occlusions, and **facial coverings** can significantly degrade performance. Additionally, **privacy** and **bias** concerns persist, as face recognition can be misused or exhibit higher error rates for certain demographic groups.
+
+## 5. Composing Music
+AI music composition frequently employs **generative models** such as **RNNs**, **Transformers**, or **Variational Autoencoders**. These systems can produce melodies and harmonies that resemble particular artists or genres, sometimes even matching stylistic nuances. Yet, generating pieces that capture the **emotional depth** and **long-term musical structure** akin to human composers remains challenging. Many approaches still rely on **human-in-the-loop** processes to refine or curate the AI-generated pieces. Balancing creative freedom with musical coherence is an active area of research.
+
+## 6. Robot Grasping
+Current approaches to robot grasping often integrate **deep learning** for object recognition and **reinforcement or imitation learning** for continuous control. Vision-based techniques—using cameras or depth sensors—help detect object boundaries and plan grasp strategies. Though success rates have improved in controlled environments and with known objects, **generalizing** to unstructured real-world settings remains a formidable challenge. **Robustness** to shape variations, texture differences, and dynamic interference are all open problems requiring further innovation.
