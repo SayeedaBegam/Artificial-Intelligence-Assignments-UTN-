@@ -44,5 +44,5 @@ These assignments explore classical and modern AI methods. Each one builds on fo
 
 1. **Clone** the repository or download the ZIP:
   
-   git clone https://github.com/yourusername/ai-assignments.git
+   git clone https://github.com/sayeedabegam/ai-assignments.git
    cd ai-assignments
