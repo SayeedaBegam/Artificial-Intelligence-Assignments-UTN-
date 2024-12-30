@@ -18,29 +18,23 @@ This repository contains **eight** AI assignments from my course, covering topic
    - [LU 5 - CSP Formalization](#lu-5---csp-formalization)
    - [LU 6 - MiniMax Algorithm Implementation](#lu-6---minimax-algorithm-implementation)
    - [LU 8 - DPLL](#lu-8---dpll)
-5. [References & Acknowledgments](#references--acknowledgments)
-6. [Contact](#contact)
 
 ---
 
 ## General Information
 
-- **Course**: (Name of your AI course or module)  
-- **Institution**: (Your university or institute)  
-- **Semester/Year**: (Term and year you completed these assignments)  
-- **Instructor**: (Instructor’s or professor’s name, if you wish to include it)
+- **Course**: Artifical Intelligence 
+- **Institution**: University of Technology, Nuremberg
+- **Semester/Year**: 1st Semester 
+- **Instructor**: Prof. Dr. Wolfram Burgard and Prof. Dr. Josif Grabocka
 
 These assignments explore classical and modern AI methods. Each one builds on foundational concepts or algorithms and applies them in a practical setting.
 
 ---
 
 ## Repository Structure
-
-Below is a suggested layout for your repository. Adjust it based on how you’ve organized your assignments:
-
-
+    
 - Each **LU#-AssignmentName** folder contains:
-  - **report/**: Write-ups or PDFs of your findings and conclusions.
   - **src/**: Source code or notebooks that implement and demonstrate the solution.
   - **README.md**: Details specific to the assignment (requirements, steps to run, etc.).
 
